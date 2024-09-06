@@ -28,7 +28,7 @@ public class BookmarkControllerTest {
     assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
     DocumentContext document = JsonPath.parse(response.getBody());
     Integer totalAmount = document.read("$.totalElements");
-    assertThat(totalAmount).isEqualTo(3);
+    assertThat(totalAmount).isEqualTo(6);
 
 
   }
