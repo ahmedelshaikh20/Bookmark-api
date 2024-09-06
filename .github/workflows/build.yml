@@ -27,6 +27,7 @@ jobs:
       - if: ${{ github.ref == 'refs/heads/master' }}
         name: Build and Publish Docker Image
         run: |
+          docker logout
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
           ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=ahmed/bookmarker-api
           docker push ahmed/bookmarker-api
